@@ -1,0 +1,853 @@
+// ===== Импорт обнуления из NULLstyle.scss =======================================================
+@import "NULLstyle.scss";
+
+// ===== Базовые Шрифты =======================================================
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+// ===== МИКСИНЫ =======================================================
+@mixin flexboxinline() {
+	display: -webkit-inline-flex;
+	display: -moz-inline-box;
+	display: -ms-inline-flex;
+	display: -webkit-inline-flex;
+	display: inline-flex;
+	font-size: 0;
+}
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	font-size: 0;
+}
+
+// ===== ШРИФТ по умолчанию (переменная) =======================================================
+$fontfamly: "Lato";
+
+// ===== СТАРТОВЫЕ ПЕРЕМЕННЫЕ (переменная) =======================================================
+$minwidth: 320 + px;
+$mw: 1010 + px;
+$md1: $mw + 12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+
+// ===== ОБОЛОЧКА =======================================================
+.wrapper {
+	font-family: $fontfamly;
+	width: 100%;
+	min-height: 100%;
+	@include flexbox();
+	//* Чтобы не было горизонтальной прокрутки overflow: hidden
+	overflow: hidden;
+	flex-direction: column;
+	// font-size: 100px;
+}
+
+// ===== ОСНОВНАЯ СЕТКА =======================================================
+.container {
+	max-width: $mw;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 20px;
+	}
+}
+//*===== ОБщие стили =======================================================
+.header-block {
+	text-align: center;
+
+	&__title {
+		font-size: 34px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 8.95px;
+		position: relative;
+		text-align: center;
+		padding: 0px 0px 30px 0px;
+		&:after{
+			content:'';
+			position: absolute;
+			width: 50px;
+			bottom: 0;
+			height: 1px;
+			left: 50%;
+			background-color: #000;
+			margin: 0px 0px 0px -25px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 30px;
+		}
+	}
+
+	&__subtitle {
+		// Задаем на __subtitle так как его может и не быть, если уберем, все четко
+		padding-top: 37px;
+
+		max-width: 688px;
+		color: #868585;
+		font-size: 14px;
+		font-weight: 300;
+		text-align: center;
+		line-height: 25.89px;
+		margin: 0px auto;
+	}
+}
+/*------------------------------------- 1 Блок ---------------------------------------*/
+
+.mainblock {
+	
+	@include flexbox();
+	flex: 1 1 auto;
+	position: relative;
+	justify-content: center;
+	text-align: center;
+
+	// !Чтобы не было скрола на iphone 5 =====================
+	@media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+		padding: 40px 0px 10px 0px;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+		flex: 1 1 auto;
+		padding: 100px 0px 150px 0px;
+		@media (max-width: $md4+px) {
+			padding: 50px 0px 100px 0px;
+		}
+
+
+		.container {
+			height: 100%;
+			@include flexbox();
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&__logo {
+	}
+
+	&__text {
+		position: relative;
+		padding: 0px 20px 0px 20px;
+		margin: 50px 0px;
+		&:after {
+			position: absolute;
+			content: "";
+			width: 105px;
+			height: 2px;
+			background-color: #ffffff;
+			// !Делаем left = 50 %, добавляя margin, чтобы при адаптиве потом ничего не съезжяло =============
+			left: 50%;
+			margin: 0px 0px -20px -52.5px;
+			bottom: 0;
+		}
+		
+	}
+
+	&__title {
+		font-family: Lato;
+		font-size: 34px;
+		line-height: 40px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
+		color: #ffffff;
+		@media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+			font-size: 25px;
+			line-height: 30px;
+			padding-bottom: 10px;
+		} // ! max-height - вертикальный адаптив =====================
+		@media screen and (max-width: $md4+px), screen and (max-height: 600px) {
+			font-size: 20px;
+			line-height: 22px;
+			padding-bottom: 5px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 26px;
+		font-weight: 300;
+		text-transform: none;
+		color: #ffffff;
+		line-height: 150%;
+		@media screen and (max-width: $md3+px), screen and (max-height: 600px) {
+			font-size: 18px;
+			// line-height: 140%;
+		}
+	}
+
+	&__footer {
+		// !Выравнили галочку ======================
+		@include flexboxinline();
+		flex-direction: column;
+	}
+
+	&__btn {
+	}
+
+	.btn {
+		@include flexboxinline();
+		padding: 0px 42px;
+		height: 47px;
+		line-height: 45px;
+		font-size: 15px;
+		letter-spacing: 0.5px;
+		border: solid 1px #fff;
+		text-transform: uppercase;
+		position: relative;
+		cursor: pointer;
+		color: #fff;
+	
+		&:hover:before {
+			left: 0%;
+			right: auto;
+			width: 100%;
+		}
+		&:before {
+			display: block;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			height: 100%;
+			width: 0px;
+			z-index: -1;
+			content: '';
+			transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+		}
+
+	}
+
+	.btn_w{
+		&:before {
+			background-color: #fff;
+		}
+		
+		&:hover {
+			background-color: transparent;
+			text-shadow: nthree;
+			color: #000;
+		}
+	}
+	
+
+	// Делаем анимацию для стрелки ============================
+
+	&__arrow {
+		position: relative;
+		animation: arrow 2s infinite ease;
+		padding: 30px 0px 0px 0px;
+	}
+	@keyframes arrow {
+		0% {
+			top: 0;
+		}
+		50% {
+			top: 15px;
+		}
+		100% {
+			top: 0;
+		}
+	}
+	@-webkit-keyframes arrow {
+		0% {
+			top: 0;
+		}
+		50% {
+			top: 15px;
+		}
+		100% {
+			top: 0;
+		}
+	}
+	@-moz-keyframes arrow {
+		0% {
+			top: 0;
+		}
+		50% {
+			top: 15px;
+		}
+		100% {
+			top: 0;
+		}
+	}
+	@-ms-keyframes arrow {
+		0% {
+			top: 0;
+		}
+		50% {
+			top: 15px;
+		}
+		100% {
+			top: 0;
+		}
+	}
+
+	// Фон mainblock
+
+	&__image {
+		background-image: url('../img/mainblock/bg_header_743.jpg');
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-position: left bottom;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+
+	}
+}
+
+// 2 блок - MENU =======================================================
+.menu {
+	padding: 22px 0px 12px 0px;
+	border-bottom: 1px solid #D1D3D4;
+
+	&_mb{
+		margin: 0px 0px 130px 0px;
+	}
+	&__list {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		line-height: 30px;
+		a {
+			padding: 0px 10px;
+			@media (max-width: $md3+px) {
+				padding: 0px 10px 0px 10px;
+			}
+		}
+	}
+
+	&__link {
+		flex: 0 1 100%;
+
+		font-weight: 400;
+		font-size: 15px;
+		font-style: normal;
+		line-height: 1.2px;
+		letter-spacing: 0.2px;
+		color: #3c3c3c;
+		text-align: center;
+	
+
+		&:hover {
+			color: #ada074;
+		}
+		&-act {
+			font-weight: 700;
+			font-size: 15px;
+			font-style: normal;
+			line-height: 1.2px;
+			letter-spacing: 0.2px;
+			color: #ada074;
+			text-align: center;
+		}
+
+	}
+}
+// 3 блок - About =======================================================
+.about {
+	margin-top: 100px;
+	margin-bottom: 95px;
+	@media (max-width: $md3+px) {
+		margin-bottom: -10px;
+	}
+	@media (max-width: $md4+px) {
+		margin-top: -50px;
+	}
+
+	&__body {
+		max-width: 823px;
+		margin: 0px auto;
+		
+	}
+	&__header-block {
+		margin: 0px 40px 65px 40px;
+	}
+
+	&__row {
+		@include flexbox();
+		font-size: 0;
+		margin: 0 -15px;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+		}
+	}
+	&__column {
+		padding: 0px 15px;
+		flex: 0 1 33%;
+
+		@media (max-width: $md3+px) {
+			flex: 0 0 100%;
+			margin-bottom: 80px;
+		}
+	}
+}
+
+
+.item-about {
+	@media (max-width: $md4+px) {
+		margin-top: -10px;
+	}
+	&__icon {
+		margin: 0px auto 40px auto;
+		border-radius: 50%;
+		width: 92px;
+		height: 92px;
+		border: 2px solid #b3abab;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover{
+			border: 2px solid black;
+			border-radius: 40%;
+			transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+		}
+	}
+	&__title {
+		text-align: center;
+		color: #000000;
+		font-size: 22px;
+		text-transform: uppercase;
+		letter-spacing: 3.52px;
+		margin: 0px 0px 35px 0px;
+	}
+	&__text {
+		text-align: center;
+		color: #868585;
+		line-height: 26px;
+		font-weight: 300;
+		font-size: 14px;
+		padding: 0px 10px;
+	}
+}
+
+// ===== 4 блок - Портфолио =======================================================
+
+.portfolio {
+	background-color: #f3f3f3;
+	padding: 107px 0px 62px 0px;
+	@media (max-width: $md2+px) {
+		padding: 50px 0px 60px 0px;
+	}
+	&__header-block {
+		margin: 0px 0px 50px 0px;
+		@media (max-width: $md2+px) {
+			padding: 50px 0px 30px 0px;
+		}
+		@media (max-width: $md3+px) {
+			padding: 30px 0px 20px 0px;
+		}
+		
+	}
+
+	&__filter {
+		margin-bottom: 135px;
+		@media (max-width: $md2+px) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__items {
+		@include flexbox();
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	
+
+	&__column {
+		flex: 0 1 40%;
+		max-width: 50%;
+		margin:0 10px;
+		margin-bottom: 35px;
+		text-align: center;
+
+
+		@media (max-width: $md3+px) {
+			flex: 1 1 100%;
+
+		}
+		
+	}
+
+	&__item {
+		
+		img {
+			max-width: 100%;
+			&:hover{
+				border: solid 2px rgb(112, 110, 110);
+				transition: all 0.1s cubic-bezier(0.42, 0, 0.58, 1);
+
+			}
+
+		}
+	}
+
+	&__footer {
+		padding-top: 60px;
+		text-align: center;
+		height: 100px;
+		// @media (max-width: $md3+px) {
+		// 	padding: 15px 0px 0px 0px;
+		// }
+	}
+
+	&__btn {
+	}
+}
+
+// Кнопка
+
+.portfolio__btn{
+	padding: 17px 44px;
+	width: 180px;
+	font-size: 15px;
+	color: #000;
+	cursor: pointer;
+	border: 2px solid #000;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.portfolio__btn:hover{
+	color: #fff;
+	background-color: #ada074;
+	border: 1px solid #000;
+}
+
+
+// ===== Фильтр =======================================================
+.filter {
+	
+	&__list {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+	}
+	&__item {
+		margin: 0px 25px;
+		font-family: Lato;
+		font-size: 15px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #3c3c3c;
+		cursor: pointer;
+
+		&:hover{
+			text-decoration: underline;
+		}
+
+		&.active{
+			color: #ada074;
+			font-weight: 700;
+		}
+
+		@media (max-width: $md3+px) {
+			margin: 0 15px;
+		}
+	}
+
+}
+// ===== 5 блок =======================================================
+
+.partners {
+	background: linear-gradient(45deg, #133766, #1D3040);
+	padding: 100px 0;  
+	@media (max-width: $md3+px) {
+		padding-top: 60px;
+		padding-bottom: 40px;
+		
+	}
+
+	&__title {
+		font-family: $fontfamly;
+		font-size: 30.4px;
+		line-height: 1.2;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: #ffffff;
+		text-align: center;
+		
+		padding-bottom: 93px;
+
+	}
+
+	&__items {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+	}
+
+	&__column {
+		flex: 0 1 18%;
+		text-align: center;
+		@media (max-width: $md3+px) {
+			flex: 0 1 30%;
+			
+		}
+	}
+
+	&__item {
+		@media (max-width: $md3+px) {
+			padding: 0px 50px 40px 50px;
+			
+		}
+	}
+}
+
+// ===== 6 блок =======================================================
+ 
+.contacts {
+	margin: 100px 0;
+	@media (max-width: $md3+px) {
+		margin-top: 60px;
+		margin-bottom: 60px;
+
+	}
+
+	&__header-block {
+		margin-bottom: 120px;
+
+		@media (max-width: $md4+px) {
+		margin-bottom: 90px;
+	}
+	}
+
+	&__body {
+		@include flexbox();
+		margin: 0px 15px;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__column {
+		flex: 0 1 50%;
+		margin: 0px 35px;
+		
+	}
+
+	&__form {
+		// text-align: right;
+	}
+
+	&__content {
+		@media (max-width: $md3+px) {
+			@include flexbox();
+			flex-direction: column;
+			margin-top: 30px;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 26px;
+		font-weight: 400;
+		color: #000000;
+		max-width: 300px;
+
+		padding-bottom: 10px;
+
+		
+	}
+
+	&__name {
+		font-size: 14px;
+		line-height: 26px;
+		font-weight: 700;
+		color: #000000;
+		
+	}
+
+	&__social {
+		padding: 20px 0px 10px 0px;
+		
+		
+	}
+
+	&__email {
+		font-size: 14px;
+		line-height: 26px;
+		font-weight: 400;
+		color: #000000;
+		a{
+			font-weight: 700;
+			color: black;
+		}
+	}
+}
+
+.header-block {
+	
+	&__title {
+	}
+}
+.form-contacts {
+
+	&__body {
+		display: inline-block;
+		width: 100%;
+		min-width: 385px;
+		padding: 0px 2px;
+		
+	}
+	&__row {
+		@include flexbox();
+		margin: 0px -15px 70px 0;
+
+		@media (max-width: $md4+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__column {
+		flex: 0 1 50%;
+		padding-bottom: 20px;
+		padding-right:15px;
+
+		@media (max-width: $md4+px) {
+			flex: 0 1 80%;
+		}
+	}
+
+	&__label {
+		font-family: $fontfamly;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: #000000;
+		padding-bottom: 10px;
+		&:hover {
+			color: #ada074;
+		}
+		}
+		&__btn {
+			text-align: center;
+			margin-top: 42px;
+		}
+
+		// &__input{
+		// }
+
+		&__media4{
+			@media (max-width: $md4+px) {
+				@include flexbox();
+				justify-content: center;
+			}
+		}
+}
+
+
+.social {
+	@include flexbox();
+	&__item {
+		margin: 0px 15px 0px 0px;
+	}
+}
+
+.input{
+	border-top: solid 1px #000;
+	background-color: #f3f3f3;
+	height: 35px;
+	width: 100%;
+	display: block;
+	padding: 0px 20px;
+	&:focus{
+		border-top: 1px solid blue;
+	}
+
+	@media (max-width: $md4+px) {
+		height: 45px;
+	}
+}
+
+textarea.input{
+	//* убираем возможность изменять пользователю
+	resize: none;
+	//* убираем прокрутку на IE
+	overflow: hidden;
+
+	height: 117px;
+	padding: 10px 20px;
+
+	@media (max-width: $md4+px) {
+		min-width: 300px;
+	}
+}
+
+// ===== 7 блок =======================================================
+
+.footer {
+	background-color: #3c3c3c;
+	padding: 45px 0;
+	&__body {
+		text-align: center;
+	}
+
+	&__logo {
+		display: inline-block;
+		margin-bottom: 40px;
+	}
+
+	&__menu {
+		text-align: center;
+		margin-bottom: 25px;
+
+	}
+
+	&__list {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+	&__link {
+		padding: 0 10px;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #a4a4a4;
+		&:hover {
+			color: #ada074;
+		}
+
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 400;
+		color: #6c6c6c;
+		
+	}
+}
