@@ -1,0 +1,291 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+<!------------------------------ HEAD ----------------------------------------------->
+
+<head>
+	<!-- Заголовок страницы в браузере -->
+	<title>Портфолио 3</title>
+
+	<!-- Подключаем CSS -->
+	<link rel="stylesheet" href="css/style.css" />
+	<!-- Подключаем слайдер -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.css"
+		integrity="sha512-3eoKq7cU6gdVeT+6eL40YcJLD8dxzQmOK54qxUWVjg7H4NN3u5AA5k5ywrqLV15hOZDBBgdQH/GK5CA9MwDVwg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Кодировка страницы -->
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<!-- Разрешаем адаптив -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!-- Подключаем иконки -->
+	<script src="https://kit.fontawesome.com/de44200578.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!---------------------------------------------- Обертка ----------------------------------------------->
+	<div class="wrapper">
+		<!---------------------------------------------- 1 Блок ----------------------------------------------->
+		<div class="mainblock" id="home">
+			<div class="mainblock__content">
+				<div class="container">
+					<a href="" class="mainblock__logo"></a>
+					<img src="img/mainblock/logo12.png" alt="">
+					<div class="mainblock__text">
+						<div class="mainblock__title">Простой и привлекательный дизайн</div>
+						<div class="mainblock__subtitle">Для вашего приложения, логотипа, веб-сайта</div>
+					</div>
+					<!--------------------------------- Подвал 1 блока -------------------------------->
+					<div class="mainblock__footer">
+						<!----------- span для того, чтобы анимация не перекрыла текст -------------------->
+						<a href="" class="mainblock__btn btn btn_w" data-scroll="#about"><span>ЧИТАТЬ ДАЛЕЕ</span></a>
+						<a href="" class="mainblock__arrow" data-scroll="#about">
+							<img src="img/mainblock/arrow_down_30.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--! Bg шире, чем контейнер, поэтому на том же уровне и отдельно------------>
+			<div class="mainblock__image"></div>
+		</div>
+
+		<!---------------------------------------------- Оболочка контента ----------------------------------------------->
+		<div class="content">
+			<!---------------------------------------------- 2 Блок - menu ----------------------------------------------->
+			<div class="menu menu_mb">
+				<div class="container">
+					<nav class="menu__items">
+						<ul class="menu__list">
+							<li><a href='#' class="menu__link-act" data-scroll="#home">ГЛАВНАЯ</a></li>
+							<li><a href='#' class="menu__link" data-scroll="#about">О НАС</a></li>
+							<li><a href='#' class="menu__link" data-scroll="#portfolio">ПРОЕКТЫ</a></li>
+							<li><a href='#' class="menu__link" data-scroll="#contacts">КОНТАКТЫ</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!---------------------------------------------- 3 Блок - About ----------------------------------------------->
+			<div class="about" id="about">
+				<div class="about__body">
+					<div class="about__header-block header-block">
+						<div class="header-block__title">ЧТО МЫ ДЕЛАЕМ</div>
+						<div class="header-block__subtitle">Мы специализируемся на современных, функциональных и потрясающих
+							сайтах
+							с дизайном разной сложности. Мы эксперты в UX-дизайне и проектировании интерфейсов.
+							В нашем процессе проектирования мы обязательно остаемся на шаг впереди последних тенденций,
+							Никогда не забывая соблюдать ключевые веб-стандарты.</div>
+					</div>
+					<div class="about__row">
+						<div class="about__column">
+							<div class="item-about">
+								<div class="item-about__icon">
+									<img src="img/about/01.png" alt="" />
+								</div>
+								<div class="item-about__title">Веб-дизайн</div>
+								<div class="item-about__text">Мы склонны доставлять уникальный и функциональный дизайн через
+									инновации и креативность.</div>
+							</div>
+						</div>
+						<div class="about__column">
+							<div class="item-about">
+								<div class="item-about__icon">
+									<img src="img/about/02.png" alt="" />
+								</div>
+								<div class="item-about__title">iOS и Android</div>
+								<div class="item-about__text">Мы стремимся сблизить новые предприятия и клиентов
+									через ценную информацию и надлежащее таргетинг.</div>
+							</div>
+						</div>
+						<div class="about__column">
+							<div class="item-about">
+								<div class="item-about__icon">
+									<img src="img/about/03.png" alt="" />
+								</div>
+								<div class="item-about__title">Маркетинг</div>
+								<div class="item-about__text">Мы поможем вам установить правильные цели и выбрать ценности.
+									Успех зависит от установления правильного намерения.</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!---------------------------------------------- 4 - ПРОЕКТЫ ----------------------------------------------->
+			<div class="portfolio" id="portfolio">
+				<div class="container">
+					<div class="portfolio__header-block header-block">
+						<div class="header-block__title">проекты</div>
+					</div>
+
+					<nav class="portfolio__filter filter">
+						<ul class="filter__list">
+							<li class="filter__item active" data-filter="1">ALL</li>
+							<li class="filter__item" data-filter="2">WEB</li>
+							<li class="filter__item" data-filter="3">MOBILE</li>
+							<li class="filter__item" data-filter="4">LOGO</li>
+						</ul>
+					</nav>
+
+					<div class="portfolio__items gallery">
+						<div class="portfolio__column p_2">
+							<a href="img/portfolio/web1 1.png" class="portfolio__item"><img src="img/portfolio/web1 1.png"
+									alt=""></a>
+						</div>
+						<div class="portfolio__column p_2">
+							<a href="img/portfolio/web2 1.png" class="portfolio__item"><img src="img/portfolio/web2 1.png"
+									alt=""></a>
+						</div>
+						<div class="portfolio__column p_2">
+							<a href="img/portfolio/web3 1.png" class="portfolio__item"><img src="img/portfolio/web3 1.png"
+									alt=""></a>
+						</div>
+						<div class="portfolio__column p_2">
+							<a href="img/portfolio/web 4 1.png" class="portfolio__item"><img src="img/portfolio/web 4 1.png"
+									alt=""></a>
+						</div>
+						<div class="portfolio__column p_3">
+							<a href="img/portfolio/Fintech - Dark Theme 1.png" class="portfolio__item"><img
+									src="img/portfolio/Fintech - Dark Theme 1.png" alt=""></a>
+						</div>
+						<div class="portfolio__column p_3">
+							<a href="img/portfolio/Тренды дизайна приложений на 2020 год 1.png" class="portfolio__item"><img
+									src="img/portfolio/Тренды дизайна приложений на 2020 год 1.png" alt=""></a>
+						</div>
+						<div class="portfolio__column p_4">
+							<a href="img/portfolio/A Compass 1.png" class="portfolio__item"><img
+									src="img/portfolio/A Compass 1.png" alt=""></a>
+						</div>
+						<div class="portfolio__column p_4">
+							<a href="img/portfolio/Architech Logo 1.png" class="portfolio__item"><img
+									src="img/portfolio/Architech Logo 1.png" alt=""></a>
+						</div>
+					</div>
+
+					<div class="portfolio__footer">
+						<a href="" class="portfolio__btn" data-scroll="#contacts"><span>НАПИСАТЬ НАМ</span></a>
+					</div>
+
+				</div>
+			</div>
+			<!---------------------------------------------- 5 Блок - партнеры ----------------------------------------------->
+			<div class="partners">
+				<div class="container">
+					<div class="partners__title">Партнеры</div>
+					<div class="partners__items">
+						<div class="partners__column">
+							<div class="partners__item">
+								<img src="img/partners/1.png" alt="">
+							</div>
+						</div>
+						<div class="partners__column">
+							<div class="partners__item">
+								<img src="img/partners/2 (7).png" alt="">
+							</div>
+						</div>
+						<div class="partners__column">
+							<div class="partners__item">
+								<img src="img/partners/3 (5).png" alt="">
+							</div>
+						</div>
+						<div class="partners__column">
+							<div class="partners__item">
+								<img src="img/partners/4 (2).png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!---------------------------------------------- 6 Блок - Контакты ----------------------------------------------->
+			<div class="contacts" id="contacts">
+				<div class="container">
+					<div class="contacts__header-block header-block">
+						<div class="header-block__title">НАШИ КОНТАКТЫ</div>
+					</div>
+					<div class="contacts__body">
+						<div class="contacts__column">
+							<form action="" class="contacts__form form-contacts">
+								<div class="form-contacts__body">
+									<div class="form-contacts__row">
+										<div class="form-contacts__column">
+											<div class="form-contacts__input">
+												<div class="form-contacts__label">Ваше имя</div>
+												<input class="input" type="text" autocomplete="off" name="form[]" data-value="">
+											</div>
+										</div>
+										<div class="form-contacts__column">
+											<div class="form-contacts__input">
+												<div class="form-contacts__label">Ваш E-MAIL</div>
+												<input class="input" type="text" autocomplete="off" name="form[]" data-value="">
+											</div>
+										</div>
+									</div>
+									<div class="form-contacts__media4">
+										<div class="form-contacts__input">
+											<div class="form-contacts__label">Комментарий</div>
+											<textarea class="input" autocomplete="off" name="form[]" data-value=""></textarea>
+										</div>
+									</div>
+									<div class="form-contacts__btn">
+										<button type="submit" class="portfolio__btn"><span>ОТПРАВИТЬ</span></button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+
+						<div class="contacts__column">
+							<div class="contacts__content">
+								<div class="contacts__text">
+									Есть идея для проекта? Просто хочу исследовать или увидеть возможности? <br> <b>
+										Мы здесь чтобы помочь.
+									</b>
+								</div>
+								<div class="contacts__name">Евгений Берн</div>
+								<div class="contacts__social social">
+									<a href="" class="social__item"><img src="img/socail/free-icon-facebook-747374.png"
+											alt=""></a>
+									<a href="" class="social__item"><img src="img/socail/free-icon-linkedin-1384088.png"
+											alt=""></a>
+								</div>
+								<div class="contacts__email">
+									e-mail: <a href="mailto:postma.elena@gmail.com">evgen.bern@gmail.com</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!---------------------------------------------- Подвал - 7 Блок ----------------------------------------------->
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__body">
+						<div class="footer__logo"><img src="img/mainblock/logo12.png" alt=""></div>
+						<nav class="footer__menu">
+							<ul class="footer__list">
+								<li><a href="" class="footer__link" data-scroll="#home">Главная</a></li>
+								<li><a href="" class="footer__link">Facebook</a></li>
+								<li><a href="" class="footer__link">Linkedin</a></li>
+								<li><a href="" class="footer__link" data-scroll="#contacts">Контакты</a></li>
+							</ul>
+						</nav>
+						<div class="footer__text">
+							© 2015. All Rights Reserved
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.js"
+			integrity="sha512-FbW9TrdqAZVgIOrQeqDRnCe+l0g+aMBP7pWEt/zLWx8zgafpBwvJ6F1rsU+mkvbXuB4mBwS2ehlkZHE9cknTrg=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="js/script.js"></script>
+
+</body>
+
+
+
+</html>
