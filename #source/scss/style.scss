@@ -41,7 +41,6 @@ $md4: 479.98;
 	width: 100%;
 	min-height: 100%;
 	@include flexbox();
-	//* Чтобы не было горизонтальной прокрутки overflow: hidden
 	overflow: hidden;
 	flex-direction: column;
 	// font-size: 100px;
@@ -91,7 +90,6 @@ $md4: 479.98;
 	}
 
 	&__subtitle {
-		// Задаем на __subtitle так как его может и не быть, если уберем, все четко
 		padding-top: 37px;
 
 		max-width: 688px;
@@ -113,7 +111,7 @@ $md4: 479.98;
 	justify-content: center;
 	text-align: center;
 
-	// !Чтобы не было скрола на iphone 5 =====================
+	// Чтобы не было скрола на iphone 5 ===
 	@media screen and (max-width: $md3+px), screen and (max-height: 600px) {
 		padding: 40px 0px 10px 0px;
 	}
@@ -137,9 +135,6 @@ $md4: 479.98;
 		}
 	}
 
-	&__logo {
-	}
-
 	&__text {
 		position: relative;
 		padding: 0px 20px 0px 20px;
@@ -150,7 +145,7 @@ $md4: 479.98;
 			width: 105px;
 			height: 2px;
 			background-color: #ffffff;
-			// !Делаем left = 50 %, добавляя margin, чтобы при адаптиве потом ничего не съезжяло =============
+			// Делаем left = 50 %, добавляя margin, чтобы при адаптиве ничего не съезжяло
 			left: 50%;
 			margin: 0px 0px -20px -52.5px;
 			bottom: 0;
@@ -170,7 +165,7 @@ $md4: 479.98;
 			font-size: 25px;
 			line-height: 30px;
 			padding-bottom: 10px;
-		} // ! max-height - вертикальный адаптив =====================
+		}
 		@media screen and (max-width: $md4+px), screen and (max-height: 600px) {
 			font-size: 20px;
 			line-height: 22px;
@@ -186,18 +181,15 @@ $md4: 479.98;
 		line-height: 150%;
 		@media screen and (max-width: $md3+px), screen and (max-height: 600px) {
 			font-size: 18px;
-			// line-height: 140%;
 		}
 	}
 
 	&__footer {
-		// !Выравнили галочку ======================
+		// Выравниваем галочку
 		@include flexboxinline();
 		flex-direction: column;
 	}
 
-	&__btn {
-	}
 
 	.btn {
 		@include flexboxinline();
@@ -439,7 +431,7 @@ $md4: 479.98;
 	}
 }
 
-// ===== 4 блок - Портфолио =======================================================
+// ===== 4 блок - Портфолио ===========================
 
 .portfolio {
 	background-color: #f3f3f3;
@@ -506,13 +498,8 @@ $md4: 479.98;
 		padding-top: 60px;
 		text-align: center;
 		height: 100px;
-		// @media (max-width: $md3+px) {
-		// 	padding: 15px 0px 0px 0px;
-		// }
 	}
 
-	&__btn {
-	}
 }
 
 // Кнопка
@@ -533,7 +520,7 @@ $md4: 479.98;
 }
 
 
-// ===== Фильтр =======================================================
+// ===== Фильтр ===========================
 .filter {
 	
 	&__list {
@@ -565,8 +552,7 @@ $md4: 479.98;
 	}
 
 }
-// ===== 5 блок =======================================================
-
+// ===== 5 блок =========================
 .partners {
 	background: linear-gradient(45deg, #133766, #1D3040);
 	padding: 100px 0;  
@@ -602,13 +588,16 @@ $md4: 479.98;
 		text-align: center;
 		@media (max-width: $md3+px) {
 			flex: 0 1 30%;
+		}
+		@media (max-width: $md4+px) {
+			flex: 0 1 49%;
 			
 		}
 	}
 
 	&__item {
 		@media (max-width: $md3+px) {
-			padding: 0px 50px 40px 50px;
+			padding: 0px 40px 40px 50px;
 			
 		}
 	}
@@ -701,11 +690,6 @@ $md4: 479.98;
 	}
 }
 
-.header-block {
-	
-	&__title {
-	}
-}
 .form-contacts {
 
 	&__body {
@@ -755,8 +739,6 @@ $md4: 479.98;
 			margin-top: 42px;
 		}
 
-		// &__input{
-		// }
 
 		&__media4{
 			@media (max-width: $md4+px) {
@@ -765,7 +747,6 @@ $md4: 479.98;
 			}
 		}
 }
-
 
 .social {
 	@include flexbox();
@@ -807,7 +788,7 @@ textarea.input{
 // ===== 7 блок =======================================================
 
 .footer {
-	background-color: #3c3c3c;
+	background-color: #231f1f;
 	padding: 45px 0;
 	&__body {
 		text-align: center;

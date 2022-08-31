@@ -11,7 +11,7 @@ $('[data-scroll]').on('click', function (event) {
 
 })
 
-// Zoom
+// Активируем слайдер
 if ($('.gallery').length > 0) {
 	baguetteBox.run('.gallery', {
 		// 
